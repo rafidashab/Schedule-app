@@ -12,5 +12,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Start coding here
 
+        //Make the UI first
+
+        //Create TimeBlock class
+            //has color attribute , getColor(), setColor(string color)
+
+        //Initialize an array length n=9 of TimeBlocks[] week;
+
+        //Wire the array with the UI widget timeBlocks
+
+        //If a timeBlock is touched change the color
+
     }
 }
