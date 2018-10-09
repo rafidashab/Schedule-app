@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Schedule</string>
+    <string name="first_position">1</string>
+    <string name="second_position">2</string>
+    <string name="third_position">3</string>
+    <string name="first_title">Monday</string>
+    <string name="second_title">Tuesday</string>
+    <string name="third_title">Wednesday</string>
 </resources>
