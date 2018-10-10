@@ -9,7 +9,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int NUMBER_OF_TIME_BLOCKS = 9;
     Button[] mTimeBlockButtons = new Button[NUMBER_OF_TIME_BLOCKS];
-    TimeBlock[] timeBlocks = new TimeBlock[NUMBER_OF_TIME_BLOCKS];
 
     private Button mGreenButton;
     private Button mRedButton;
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if(mColor == "red") {
             mTimeBlockButtons[id].setBackgroundResource(R.color.holo_red_dark);
         }
-        timeBlocks[id].setColor(mColor);
     }
 
     private int getTimeBlockButtonId(int index) {
