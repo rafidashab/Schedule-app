@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private int NUMBER_OF_TIME_BLOCKS = 9;
+    Button[] mTimeBlockButtons = new Button[NUMBER_OF_TIME_BLOCKS];
+    TimeBlock[] timeBlocks = new TimeBlock[NUMBER_OF_TIME_BLOCKS];
 
     private Button mGreenButton;
     private Button mRedButton;
@@ -16,14 +20,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);  //start activity_main.xml
-
-        //Start coding here
-
-        //Make the UI first
-
-        //Create TimeBlock class
-            //has color attribute , getColor(), setColor(string color)
-
+        for(int i = 0; i < NUMBER_OF_TIME_BLOCKS; i++) {
+            mTimeBlockButtons[i] = (Button) findViewById(getTimeBlockButtonId(i));
+            mTimeBlockButtons[i].setOnClickListener(this);
+        }
+      
         mGreenButton = (Button) findViewById(R.id.button_green);
         mRedButton = (Button) findViewById(R.id.button_red);
 
@@ -38,13 +39,27 @@ public class MainActivity extends AppCompatActivity {
                 mColor = "red";
             }
         });
+    }
+  
+    @Override
+    public void onClick(View v)
+    {
+        for(int i = 0; i < NUMBER_OF_TIME_BLOCKS; i++) {
+            if(v == mTimeBlockButtons[i]) {
+                onTimeBlockClicked(i);
+            }
+        }
+    }
 
+    private void onTimeBlockClicked(int id) {
+        /**
+        mTimeBlockButtons[i].setBackgroundResource(R.color.holo_green_dark);
+        This is how you set it to green, for instance
+        */
+    }
 
-        //Initialize an array length n=9 of TimeBlocks[] week;
-
-        //Wire the array with the UI widget timeBlocks
-
-        //If a timeBlock is touched change the color
-
+    private int getTimeBlockButtonId(int index) {
+        String button = "" + (index);
+        return getResources().getIdentifier(button, "id", getPackageName());
     }
 }
