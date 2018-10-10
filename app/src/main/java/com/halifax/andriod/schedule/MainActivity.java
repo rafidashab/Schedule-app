@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void onTimeBlockClicked(int id) {
         if(mColor == "green") {
-            mTimeBlockButtons[id].setBackgroundResource(R.color.holo_green_darkk);
-
+            mTimeBlockButtons[id].setBackgroundResource(R.color.holo_green_dark);
         }
         else if(mColor == "red") {
             mTimeBlockButtons[id].setBackgroundResource(R.color.holo_red_dark);
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private int getTimeBlockButtonId(int index) {
-        String button = "" + (index);
+        String button = "button" + (index);
         return getResources().getIdentifier(button, "id", getPackageName());
     }
 }
