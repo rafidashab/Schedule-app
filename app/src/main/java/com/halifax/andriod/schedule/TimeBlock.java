@@ -1,12 +1,15 @@
 package com.halifax.andriod.schedule;
 
 public class TimeBlock {
-    private String color;
+    private String mColor;
+    public TimeBlock() {
+        mColor = "default";
+    }
     public void setColor(String color) {
-        this.color = color;
+        mColor = color;
     }
     public String getColor()
     {
-        return this.color;
+        return mColor;
     }
 }
