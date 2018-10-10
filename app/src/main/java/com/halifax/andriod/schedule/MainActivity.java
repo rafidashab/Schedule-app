@@ -52,10 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void onTimeBlockClicked(int id) {
-        /**
-        mTimeBlockButtons[i].setBackgroundResource(R.color.holo_green_dark);
-        This is how you set it to green, for instance
-        */
+        if(mColor == "green") {
+            mTimeBlockButtons[id].setBackgroundResource(R.color.holo_green_darkk);
+
+        }
+        else if(mColor == "red") {
+            mTimeBlockButtons[id].setBackgroundResource(R.color.holo_red_dark);
+        }
+        timeBlocks[id].setColor(mColor);
     }
 
     private int getTimeBlockButtonId(int index) {
