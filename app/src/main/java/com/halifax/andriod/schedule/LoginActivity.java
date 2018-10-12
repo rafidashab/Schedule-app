@@ -59,8 +59,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
 
 
         ////Bind and set the dimensions of the sign-in button
@@ -72,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        
 
 
     }
@@ -135,13 +135,7 @@ public class LoginActivity extends AppCompatActivity {
         else {
             //user is not logged in
             // Set the dimensions of the sign-in button.
-            mSignInButton.setSize(SignInButton.SIZE_WIDE);
-            mSignInButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    signIn();
-                }
-            });
+
             mSignInButton.setVisibility(View.VISIBLE);
             mProfileLayout.setVisibility(View.GONE);
             //buttonLogout.setVisibility(View.GONE);
