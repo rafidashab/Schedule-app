@@ -1,9 +1,11 @@
 package com.halifax.andriod.schedule;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mGreenButton;
     private Button mRedButton;
     private String mColor;
+
+    private Button mSingIn;
 
 
     @Override
@@ -44,6 +48,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mColor = "red";
+            }
+        });
+
+        mSingIn = (Button) findViewById(R.id.sign_in);
+        mSingIn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this , LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
